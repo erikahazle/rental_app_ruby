@@ -6,8 +6,6 @@ class Building
     @floors = options[:floors]
     # address - string
     @address = options[:address]
-    # apartment number - number
-    @apartment_no = options[:apartment_no]
     # concierge - boolean
     @concierge = options[:concierge]
     # age - number
@@ -15,4 +13,9 @@ class Building
     @apartments = options[:apartments] || []
   end
 
+  def add_new_apartment(price, sqft, bedrooms, bathrooms, tenants)
+    
+
+    @apartments << Apartment.new(price, sqft, bedrooms, bathrooms, tenants)
+  end
 end
