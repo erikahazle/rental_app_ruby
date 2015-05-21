@@ -1,5 +1,4 @@
 class Building
-  # attr_reader :floors, :address, :apartment_no, :concierge, :age
   attr_accessor :apartments
   def initialize(options = {})
     # floors - number
@@ -14,8 +13,10 @@ class Building
   end
 
   def add_new_apartment(price, sqft, bedrooms, bathrooms, tenants)
-    
-
     @apartments << Apartment.new(price, sqft, bedrooms, bathrooms, tenants)
+  end
+
+  def num_of_ready_apart
+    free = @apartments.each { |apartment| apartment.being_renovated == false }
   end
 end
